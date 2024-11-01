@@ -1,10 +1,14 @@
+INCLUDE_DIR ?= "include"
+
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -pedantic -g
+CFLAGS = -Wall -Wextra -Werror -pedantic -g -I$(INCLUDE_DIR)
 
 OBJ = binary
 
 OBJDIR = $(OBJ)/objects
 OBJS = $(addprefix $(OBJDIR)/, $(patsubst src/%.c, %.o, $(wildcard src/*.c)))
+OBJS += $(addprefix $(OBJDIR)/, $(patsubst src/simplifier/%.c, %.o, $(wildcard src/simplifier/*.c)))
+OBJS += $(addprefix $(OBJDIR)/, $(patsubst src/factorer/%.c, %.o, $(wildcard src/factorer/*.c)))
 
 BINFOLDER = $(OBJ)
 BIN = $(BINFOLDER)/divisible
@@ -22,6 +26,12 @@ $(BIN) : $(OBJS)
 	$(CC) $(OBJS) -o $(BIN) $(CFLAGS)
 
 $(OBJDIR)/%.o : src/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJDIR)/%.o : src/simplifier/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJDIR)/%.o : src/factorer/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: run

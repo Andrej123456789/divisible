@@ -1,9 +1,12 @@
-#include <stdio.h>
-
 #include <inttypes.h>
+#include <stdbool.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include <simplifier/simplifier.h>
+#include <factorer/factorer.h>
 
 int main()
 {
@@ -23,7 +26,13 @@ int main()
     number = strtoull(number_input, NULL, 10);
 
     printf("\n");
-    printf("%"PRIu64" | %s\n", number, expression);
+    printf("%"PRIu64" | %s = \n", number, expression);
+
+    simplifier(expression);
+    printf(" = \n");
+    
+    bool result = factorer(expression, number);
+    result == true ? printf(" - TRUE!\n") : printf(" - FALSE!\n");
 
     return 0;
 }
