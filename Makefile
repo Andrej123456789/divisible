@@ -38,6 +38,10 @@ $(OBJDIR)/%.o : src/factorer/%.c
 run:
 	@./$(BIN)
 
+.PHONY: run_debug
+run_debug:
+	@./$(BIN) 3x+3 3
+
 .PHONY: clean
 clean:
 	rm -rf $(OBJ)

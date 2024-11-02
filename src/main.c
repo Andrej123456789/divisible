@@ -8,7 +8,7 @@
 #include <simplifier/simplifier.h>
 #include <factorer/factorer.h>
 
-int main()
+int main(int argc, char* argv[])
 {
     char expression[1024];
 
@@ -17,11 +17,20 @@ int main()
 
     printf("=== divisible ===\n");
 
-    printf("Enter a algebraic expression: ");
-    scanf("%1023s", expression);
+    if (argc >= 3)
+    {
+        strncpy(expression, argv[1], 1024);
+        strncpy(number_input, argv[2], 64);
+    }
 
-    printf("Enter a number: ");
-    scanf("%63s", number_input);
+    else
+    {
+        printf("Enter a algebraic expression: ");
+        scanf("%1023s", expression);
+
+        printf("Enter a number: ");
+        scanf("%63s", number_input);
+    }
 
     number = strtoull(number_input, NULL, 10);
 

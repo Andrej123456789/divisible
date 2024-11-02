@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "stddef.h": "c"
+        "stddef.h": "c",
+        "simplifier.h": "c",
+        "lexer.h": "c"
     }
 }

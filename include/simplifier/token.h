@@ -6,10 +6,10 @@ enum TT
     VARIABLE,
     CONSTANT,
 
-    PLUS,
-    MINUS,
-    MULTIPLY,
-    DIVIDE,
+    ADDITION,
+    SUBTRACTION,
+    MULTIPLICATION,
+    DIVISION,
     POWER,
 
     LPAREN,
