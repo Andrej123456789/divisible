@@ -28,9 +28,11 @@ int main()
     printf("\n");
     printf("%"PRIu64" | %s = \n", number, expression);
 
+    printf("= ");
     simplifier(expression);
     printf(" = \n");
     
+    printf("= ");
     bool result = factorer(expression, number);
     result == true ? printf(" - TRUE!\n") : printf(" - FALSE!\n");
 

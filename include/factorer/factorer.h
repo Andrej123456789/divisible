@@ -5,7 +5,7 @@
 
 /**
  * Factor out the common factor.
- * Print final expression and return is the starting expression divisible by the number.
+ * Prints final expression and returns is the starting expression divisible by the number.
  * @param expression
  * @param number
  * @return bool 
