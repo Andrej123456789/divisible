@@ -2,7 +2,9 @@
 
 Simple program that proves a given algebraic expression is divisible by a given number.
 
-Includes algebraic expression simplifier.
+Includes algebraic expression simplifier featuring several solver modes:
+- simplifier mode (solves an algebraic expression step by step)
+- factorer mode (factors an algebraic expression (including factoring by grouping))
 
 Being written in C, it allows to be run on any platform at any time.
 
